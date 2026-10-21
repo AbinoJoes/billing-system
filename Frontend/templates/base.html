@@ -1,0 +1,183 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/customer_add.css' %}">
+    <link rel="stylesheet" href="{% static 'css/customer_all.css' %}">
+    <link rel="stylesheet" href="{% static 'css/product_all.css' %}">
+    <link rel="stylesheet" href="{% static 'css/order_all.css' %}">
+    <link rel="stylesheet" href="{% static 'css/order_add.css' %}">
+    <link rel="stylesheet" href="{% static 'css/product_add.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'css/billing.css' %}">
+   
+   
+</head>
+<!-- <body >
+     <nav class="navbar sm:navbar-expand bg-1 nav-head" >
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Billing software</a>
+            <button class="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" aria-hidden="true"></span>
+            </button>
+            <dialog class="drawer drawer-end" tabindex="-1" id="navbarNavAltMarkup" aria-labelledby="navbarNavAltMarkupLabel">
+                <div class="drawer-header">
+                    <h5 class="drawer-title" id="navbarNavAltMarkupLabel">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Close"></button>
+                </div>
+                <div class="drawer-body">
+                    <div class="nav nav-pills navbar-nav">
+                    <a class="nav-link " aria-current="page" href="/Inventory/home/">Home</a>
+                    <a class="nav-link" href="/order/customerall/">Customers</a>
+                    <a class="nav-link" href="/Inventory/productall">Products</a>
+                    <a class="nav-link" href="/order/orderall">Orders</a>
+                    <a class="nav-link" href="/Inventory/contact/">Contact</a>
+                    <a class="nav-link" href="/logout/">LogOut</a>
+                    </div>
+                </div>
+            </dialog>
+        </div>
+    </nav> -->
+
+   
+{% load static %}
+
+<!-- Navbar -->
+<nav class="main-navbar">
+    <div class="navbar-left">
+
+        <!-- Sidebar Toggle Button -->
+        <button type="button" class="sidebar-toggle"
+                id="sidebarToggle"
+                aria-label="Open sidebar"
+                aria-controls="sidebar"
+                aria-expanded="false">
+            ☰
+        </button>
+
+        <a href="" class="navbar-brand">
+            <span class="brand-icon">₹</span>
+            <span>Billing <b>Management</b></span>
+        </a>
+    </div>
+
+    <div class="navbar-right">
+        <span class="admin-label"><i class="bi bi-person-fill"></i> Admin Panel</span>
+        <a href="/Inventory/contact/" class="navbar-contact">Contact</a>
+        <a href="/logout/" class="logout-btn">Logout ⇥</a>
+    </div>
+</nav>
+
+<!-- Sidebar Backdrop -->
+<div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+
+<!-- Sidebar -->
+<aside class="sidebar" id="sidebar" aria-label="Main navigation">
+    <div class="sidebar-heading">
+        <span class="sidebar-heading-icon">₹</span>
+
+        <div>
+            <h3>Billing System</h3>
+            <p>Management Panel</p>
+        </div>
+
+        <button class="sidebar-close" id="sidebarClose"
+                aria-label="Close sidebar">×</button>
+    </div>
+
+    <div class="sidebar-menu-label">MAIN MENU</div>
+
+    <ul class="sidebar-menu">
+        <li>
+            <a href="/Inventory/home/" class="sidebar-link ">
+                <span class="sidebar-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+        </li>
+        
+        {% if request.user.role == 0 or request.user.role == 1%}
+        <li>
+            <a href="/order/customerall/" class="sidebar-link ">
+                <span class="sidebar-icon">♙</span>
+                <span>Customers</span>
+            </a>
+        </li>
+        {% endif %}
+
+        <li>
+            <a href="/Inventory/productall/" class="sidebar-link">
+                <span class="sidebar-icon">▣</span>
+                <span>Products</span>
+            </a>
+        </li>
+     
+        <li>
+            <a href="/order/orderall/" class="sidebar-link">
+                <span class="sidebar-icon">▤</span>
+                <span>Orders</span>
+            </a>
+        </li>
+
+        {% if request.user.role == 0 or request.user.role == 1 %}
+        <li>
+            <a href="/order/billingpage/" class="sidebar-link">
+                <span class="sidebar-icon">
+                    <i class="bi bi-receipt"></i>
+                </span>
+                <span>BillingRecords</span>
+            </a>
+        </li>
+        {% endif %}
+    </ul>
+
+    <div class="sidebar-menu-label">SUPPORT</div>
+
+    <ul class="sidebar-menu">
+        <li>
+            <a href="/Inventory/contact/" class="sidebar-link">
+                <span class="sidebar-icon">✉</span>
+                <span>Contact</span>
+            </a>
+        <li>
+            <a href="/singup/" class="sidebar-link logout-link">
+                <span class="sidebar-icon">🧑‍💼</span>
+                <span>SignUp</span>
+            </a>
+        </li>
+        <li>
+            <a href="/logout/" class="sidebar-link logout-link">
+                <span class="sidebar-icon">↪</span>
+                <span>Logout</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="sidebar-footer">
+        <span class="online-dot"></span>
+        Billing System
+        <small>Version 1.0</small>
+    </div>
+</aside>
+
+
+
+
+
+    
+
+    {% block content %}
+
+    {% endblock %}
+    <script src="{% static 'js/filterform.js' %}"></script>
+   <script src="{% static 'js/nav.js' %}"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
+</body>

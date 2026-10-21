@@ -1,0 +1,223 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+<body>
+
+    
+
+    <main class="main-content">
+       
+            <div class="page-header">
+                <div>
+                    <h1>Billing Records</h1>
+                    <p>Manage invoices, payments and pending balances.</p>
+                </div>
+
+                <button class="primary-button" onclick="window.print()">
+                    <i class="bi bi-printer"></i> Print Report
+                </button>
+            </div>
+
+            <!-- Summary Cards -->
+            <section class="summary-grid">
+
+                <div class="summary-card">
+                    <div class="summary-icon blue">
+                        <i class="bi bi-receipt"></i>
+                    </div>
+                    <div>
+                        <p>Total Invoices</p>
+                        <h2>{{ total_invoices }}</h2>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="summary-icon purple">
+                        <i class="bi bi-currency-rupee"></i>
+                    </div>
+                    <div>
+                        <p>Total Billing Amount</p>
+                        <h2>₹ {{ total_amount|floatformat:2 }}</h2>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="summary-icon green">
+                        <i class="bi bi-check-circle"></i>
+                    </div>
+                    <div>
+                        <p>Amount Paid</p>
+                        <h2>₹ {{ paid_amount|floatformat:2 }}</h2>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="summary-icon red">
+                        <i class="bi bi-clock-history"></i>
+                    </div>
+                    <div>
+                        <p>Pending Amount</p>
+                        <h2>₹ {{ pending_amount|floatformat:2 }}</h2>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Billing Table -->
+            <section class="records-card">
+
+                <div class="records-heading">
+                    <div>
+                        <h2>All Billing Records</h2>
+                        <p>Invoices generated from your existing orders.</p>
+                    </div>
+                </div>
+
+                <!-- Search and Filter -->
+                        
+                    <form method="GET" class="filter-bar" id="customerTable">
+
+                        <!-- Search invoice or customer -->
+                        <div class="search-box">
+                            <i class="bi bi-search"></i>
+                            <input
+                                type="text"
+                                name="search"
+                                value="{{ search }}"
+                                placeholder="Search invoice or customer..."
+                                id="customerSearch"
+                            >
+                        </div>
+
+                        <!-- Customer filter -->
+                        <select name="customer">
+                            <option value="">All Customers</option>
+
+                            {% for Customers in all_customer %}
+                                <option value="{{record.customer_name}}"
+                                    {% if selected_customer == "record.customer_name" %}
+                                        selected
+                                    {% endif %}>
+                                    {{record.customer_name}}
+                                </option>
+                            {% endfor %}
+                        </select>
+
+                        <!-- Payment status filter -->
+                        <select name="status">
+                            <option value="">All Status</option>
+                            <option value="Paid" {% if selected_status == "Paid" %}selected{% endif %}>Paid</option>
+                            <option value="Partial" {% if selected_status == "Partial" %}selected{% endif %}>Partial</option>
+                            <option value="Pending" {% if selected_status == "Pending" %}selected{% endif %}>Pending</option>
+                        </select>
+
+                        <button type="submit" class="primary-button">
+                            <i class="bi bi-funnel"></i> Apply Filter
+                        </button>
+
+                        <a href=" " class="reset-button">
+                            <i class="bi bi-arrow-counterclockwise"></i> Reset
+                        </a>
+
+                    </form>
+
+
+                <!-- Table -->
+                <div class="table-responsive">
+                    <table class="billing-table">
+
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Invoice No.</th>
+                                <th>Customer</th>
+                                <th>Order Date</th>
+                                <th>Quantity</th>
+                                <th>Product Amount</th>
+                                <th>GST</th>
+                                <th>Total Amount</th>
+                                <th>Paid Amount</th>
+                                <th>Pending Amount</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {% for record in billing_records %}
+                            <tr>
+                                <td>{{ forloop.counter }}</td>
+
+                                <td>
+                                    <strong>#{{ record.invoice_number }}</strong>
+                                </td>
+
+                                <td>{{ record.customer_name }}</td>
+
+                                <td>
+                                    {{ record.order_date|default:"-" }}
+
+                                </td>
+
+                                <td>{{ record.quantity|default:"0" }}</td>
+
+                                <td>₹ {{ record.product_amount|floatformat:2 }}</td>
+
+                                <td>₹ {{ record.gst|floatformat:2 }}</td>
+
+                                <td>
+                                    <strong>₹ {{ record.total|floatformat:2 }}</strong>
+                                </td>
+
+                                <td>₹ {{ record.paid|floatformat:2 }}</td>
+
+                                <td>₹ {{ record.pending|floatformat:2 }}</td>
+
+                                <td>
+                                    <span class="status {{ record.status|lower }}">
+                                        {{ record.status }}
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button
+                                        type="button"
+                                        class="action-button"
+                                        onclick="window.print()"
+                                        title="Print billing report"
+                                    >
+                                        <i class="bi bi-printer"></i>
+                                    </button>
+                                </td>
+                            </tr>
+
+                            {% empty %}
+                            <tr>
+                                <td colspan="12" class="empty-message">
+                                    <i class="bi bi-inbox"></i>
+                                    <p>No billing records found.</p>
+                                    <span>Try changing your search or status filter.</span>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+
+                    </table>
+                </div>
+
+            </section>
+        </div>
+
+        
+
+   
+
+</body>
+
+
+
+{% endblock %}

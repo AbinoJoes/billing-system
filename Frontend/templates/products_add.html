@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+   
+
+{% block content %}
+
+
+<div class="main-content"> 
+    <div class="product-form-page">
+
+        <h2>Products Table</h2>
+
+        <div class="form-back-container">
+            <a href="/Inventory/productall/" class="backbtn">
+                <button type="button">← Back</button>
+            </a>
+        </div>
+
+        <form action="" method="POST" class="product-form">
+            {% csrf_token %}
+
+            <div class="form-fields">
+                {{ Product_detail }}
+            </div>
+
+            <div class="form-submit-container">
+                <input type="submit" value="Add Product">
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+{% endblock %}

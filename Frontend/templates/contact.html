@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+   
+
+{% block content %}
+
+{% load static %}
+
+
+
+<body>
+
+
+<!-- Main Content -->
+<main class="main-content contact-page">
+
+    <!-- Page Heading -->
+    <section class="contact-header">
+        <span class="page-label">SUPPORT CENTER</span>
+        <h1>Contact Us</h1>
+
+        <p>
+            Have a question about customers, products, orders, or billing?
+            Send us a message using the form below.
+        </p>
+    </section>
+
+
+    <!-- Contact Information and Form -->
+    <section class="contact-layout">
+
+        <!-- Contact Information -->
+        <div class="contact-info-card">
+            <h2>Get in Touch</h2>
+
+            <p class="contact-description">
+                We're here to help you with your billing management system.
+                Reach out using the contact details below.
+            </p>
+
+            <div class="contact-item">
+                <div class="contact-icon">✉</div>
+                <div>
+                    <h3>Email</h3>
+                    <p>support@example.com</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-icon">☎</div>
+                <div>
+                    <h3>Phone</h3>
+                    <p>+91 98765 43210</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-icon">◷</div>
+                <div>
+                    <h3>Working Hours</h3>
+                    <p>Monday – Saturday</p>
+                    <small>9:00 AM – 6:00 PM</small>
+                </div>
+            </div>
+
+            <div class="contact-note">
+                <span>ⓘ</span>
+                <p>
+                    Please provide clear details about your issue so we can
+                    assist you more effectively.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- Contact Form -->
+        <div class="contact-form-card">
+            <h2>Send a Message</h2>
+            <p class="form-subtitle">
+                Fill in the details below.
+            </p>
+
+            <form method="POST" action="" class="contact-form">
+                {% csrf_token %}
+               
+                 <div class="form-group">
+                    <label for="contactName">Full Name</label>
+                    <input type="text" id="contactName" name="name"
+                           placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactEmail">Email Address</label>
+                    <input type="email" id="contactEmail" name="email"
+                           placeholder="Enter your email address" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactSubject">Subject</label>
+                    <select id="contactSubject" name="subject" required>
+                        <option value="">Select a subject</option>
+                        <option value="Customer Management">Customer Management</option>
+                        <option value="Product Management">Product Management</option>
+                        <option value="Order Management">Order Management</option>
+                        <option value="Billing Issue">Billing Issue</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactMessage">Message</label>
+                    <textarea id="contactMessage" name="message"
+                              rows="5"
+                              placeholder="Describe your question or issue..."
+                              required></textarea>
+                </div> 
+                
+                <button type="submit" class="send-message-btn">
+                    Send Message <span>→</span>
+                </button>
+            </form>
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="contact-footer">
+        <p>© 2026 Billing Management System. All rights reserved.</p>
+    </footer>
+
+</main>
+
+
+<script src="{% static 'js/sidebar.js' %}"></script>
+
+</body>
+</html>
+
+
+{% endblock %}

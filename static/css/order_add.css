@@ -1,0 +1,203 @@
+
+/* Order form page */
+.order-form-page {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+.order-form-page h2 {
+    color: whitesmoke;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 22px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #1ab8ff;
+}
+
+/* Back button */
+.form-back-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.backbtn button {
+    background: #10243a;
+    color: #fff;
+    border: 1px solid #254563;
+    padding: 10px 20px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.backbtn button:hover {
+    background: #1ab8ff;
+    color: #010814;
+}
+
+/* Form card */
+.order-form {
+    width: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background: #fff;
+    border: 1px solid #dbe5ef;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Django form fields */
+.order-form .form-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+/* Labels */
+.order-form .form-fields label {
+    display: block;
+    margin-bottom: 8px;
+    color: #10243a;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Inputs, selects and textareas */
+.order-form .form-fields input:not([type="checkbox"]):not([type="radio"]),
+.order-form .form-fields select,
+.order-form .form-fields textarea {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    background: #f8fafc;
+    color: #172033;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.order-form .form-fields input:focus,
+.order-form .form-fields select:focus,
+.order-form .form-fields textarea:focus {
+    border-color: #1ab8ff;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(26, 184, 255, 0.15);
+}
+
+.order-form .form-fields textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Help and error messages */
+.order-form .form-fields .helptext {
+    display: block;
+    margin-top: 5px;
+    color: #64748b;
+    font-size: 12px;
+}
+
+.order-form .form-fields ul.errorlist {
+    color: #dc2626;
+    font-size: 13px;
+    padding-left: 18px;
+}
+
+/* Submit button */
+.order-form .form-submit-container {
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid #e5edf5;
+    padding-top: 20px;
+}
+
+.order-form .form-submit-container input[type="submit"] {
+    background: linear-gradient(135deg, #0878d1, #1ab8ff);
+    color: #fff;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.order-form .form-submit-container input[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(26, 184, 255, 0.25);
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .order-form-page {
+        padding: 20px 15px;
+    }
+
+    .order-form-page h2 {
+        font-size: 24px;
+    }
+
+    .order-form {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .order-form .form-fields {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .order-form-page {
+        padding: 15px 10px;
+    }
+
+    .order-form-page h2 {
+        font-size: 21px;
+        margin-bottom: 18px;
+    }
+
+    .order-form {
+        padding: 15px;
+        gap: 18px;
+    }
+
+    .order-form .form-fields {
+        gap: 15px;
+    }
+
+    .order-form .form-fields input:not([type="checkbox"]):not([type="radio"]),
+    .order-form .form-fields select,
+    .order-form .form-fields textarea {
+        padding: 11px;
+        font-size: 14px;
+    }
+
+    .order-form .form-submit-container {
+        display: block;
+    }
+
+    .order-form .form-submit-container input[type="submit"] {
+        width: 100%;
+    }
+
+    .backbtn button {
+        padding: 10px 16px;
+    }
+}

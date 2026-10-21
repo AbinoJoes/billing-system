@@ -1,0 +1,495 @@
+
+/* General Page */
+* {
+    box-sizing: border-box;
+}
+
+
+
+
+
+.home-page {
+    
+   
+    width: calc(100%);
+    min-height: calc(100vh - 70px);
+    padding: 50px 25px 30px;
+    box-sizing: border-box;
+    transition: margin-left 0.3s ease, width 0.3s ease;
+  
+    
+}
+
+
+
+
+/* Welcome Section */
+.welcome-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+   
+    padding: 40px;
+    border-radius: 18px;
+    color: #ffffff;
+    background: linear-gradient(120deg, #010814, #0b3155, #0879b9);
+    box-shadow: 0 8px 25px rgba(1, 8, 20, 0.12);
+    overflow: hidden;
+}
+
+.welcome-content {
+    max-width: 650px;
+}
+
+.welcome-label {
+    display: inline-block;
+    color: #1ab8ff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.welcome-content h1 {
+    margin: 0 0 15px;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.welcome-content p {
+    max-width: 600px;
+    color: #d2e2f2;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.welcome-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.primary-btn,
+.secondary-btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.primary-btn {
+    background: #1ab8ff;
+    color: #010814;
+}
+
+.primary-btn:hover {
+    background: #ffffff;
+    color: #010814;
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    color: #ffffff;
+    border: 1px solid #8bbbdc;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.secondary-btn:hover {
+    color: #010814;
+    background: #ffffff;
+}
+
+
+/* Welcome Illustration */
+.welcome-icon {
+    min-width: 190px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #ffffff;
+}
+
+.icon-circle {
+    width: 105px;
+    height: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(26, 184, 255, 0.8);
+    border-radius: 50%;
+    background: rgba(26, 184, 255, 0.13);
+    color: #1ab8ff;
+    font-size: 52px;
+    font-weight: 700;
+    box-shadow: 0 0 35px rgba(26, 184, 255, 0.12);
+}
+
+.welcome-icon span {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.welcome-icon small {
+    color: #c5d8e9;
+    font-size: 11px;
+}
+
+
+/* Section Headings */
+.dashboard-section,
+.quick-section {
+    margin-top: 35px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    color: whitesmoke;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 7px;
+}
+
+.section-heading p {
+    color: #64748b;
+    font-size: 14px;
+    margin: 0;
+}
+
+.status-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 13px;
+    border: 1px solid #dce5ee;
+    border-radius: 20px;
+    background: #ffffff;
+    color: #334155;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #16a34a;
+}
+
+
+/* Statistics Cards */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.stat-card {
+    min-width: 0;
+    padding: 23px;
+    background: #ffffff;
+    border: 1px solid #e0e8f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(1, 8, 20, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(1, 8, 20, 0.09);
+}
+
+.stat-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #e8f7ff;
+    font-size: 23px;
+}
+
+.stat-tag {
+    color: #64748b;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+}
+
+.stat-card h3 {
+    color: #081525;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 10px;
+}
+
+.stat-card p {
+    min-height: 42px;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0 0 18px;
+}
+
+.stat-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding-top: 14px;
+    border-top: 1px solid #edf1f5;
+    color: #0879b9;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.stat-link span {
+    font-size: 20px;
+    transition: transform 0.2s ease;
+}
+
+.stat-link:hover {
+    color: #010814;
+}
+
+.stat-link:hover span {
+    transform: translateX(4px);
+}
+
+
+/* Quick Actions */
+.quick-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.quick-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-width: 0;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #e0e8f0;
+    border-radius: 11px;
+    color: #081525;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.quick-card:hover {
+    border-color: #1ab8ff;
+    box-shadow: 0 5px 18px rgba(26, 184, 255, 0.10);
+    transform: translateY(-2px);
+}
+
+.quick-icon {
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #e8f7ff;
+    color: #0879b9;
+    font-size: 27px;
+}
+
+.quick-card > div {
+    flex: 1;
+    min-width: 0;
+}
+
+.quick-card h3 {
+    margin: 0 0 6px;
+    color: #081525;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.quick-card p {
+    margin: 0;
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.quick-arrow {
+    color: #0879b9;
+    font-size: 22px;
+}
+
+
+/* Information Banner */
+.info-banner {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    margin-top: 30px;
+    padding: 24px;
+    background: #e8f7ff;
+    border: 1px solid #c5eaff;
+    border-radius: 12px;
+}
+
+.info-symbol {
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #0879b9;
+    color: #ffffff;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.info-banner h3 {
+    margin: 0 0 7px;
+    color: #010814;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.info-banner p {
+    margin: 0;
+    color: #475569;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* Footer */
+.home-footer {
+    padding: 25px 0 5px;
+    text-align: center;
+}
+
+.home-footer p {
+    margin: 0;
+    color: #64748b;
+    font-size: 12px;
+}
+
+
+/* Collapsed Sidebar */
+body.sidebar-collapsed .home-page {
+    margin-left: 0;
+}
+
+
+/* Tablet */
+@media (max-width: 1100px) {
+    .home-page {
+        padding: 22px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .welcome-section {
+        padding: 30px;
+    }
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+    .home-page {
+        margin-left: 0;
+        padding: 18px 14px;
+    }
+
+    .welcome-section {
+        padding: 25px 20px;
+    }
+
+    .welcome-icon {
+        display: none;
+    }
+
+    .welcome-content h1 {
+        font-size: 29px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .stat-card p {
+        min-height: auto;
+    }
+
+    .quick-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-banner {
+        align-items: flex-start;
+        padding: 18px;
+    }
+}
+
+
+/* Small Mobile */
+@media (max-width: 400px) {
+    .home-page {
+        padding: 12px 10px;
+        margin-left: 0px;
+    }
+
+    .welcome-section {
+        padding: 22px 16px;
+    }
+
+    .welcome-content h1 {
+        font-size: 25px;
+    }
+
+    .welcome-actions {
+        flex-direction: column;
+    }
+
+    .welcome-actions a {
+        text-align: center;
+    }
+
+    .section-heading h2 {
+        font-size: 21px;
+    }
+}

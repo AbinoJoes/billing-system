@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}  
+
+{% block content %}
+
+    <!-- <h2>Odered Datas</h2>
+
+    <table border="1px">
+        <thead>
+            <tr>
+                <th>Customers</th>
+                <th>Products</th>
+                <th>OrderNumber</th>
+                <th>Date</th>
+                <th>Quantity</th>
+                <th>Amount</th>
+                <th>GSTAmount</th>
+                <th>BillAmount</th>
+                <th>Update</th>
+                <th>Delete</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for Orders in all_order %}
+                <tr>
+                    <td>{{Orders.customer_reference}}</td>
+                    <td>{{Orders.product_reference}}</td>
+                    <td>{{Orders.order_num}}</td>
+                    <td>{{Orders.order_date}}</td>
+                    <td>{{Orders.product_quantity}}</td>
+                    <td>{{Orders.product_amount}}</td>
+                    <td>{{Orders.product_gst}}</td>
+                    <td>{{Orders.bill_amount}}</td>
+
+                    <td>
+                        <a href="{% url 'update_order_items' Orders.id %}" class="update">
+                            <button>Update</button>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{% url 'delete_order_items' Orders.id %}" class="delete">
+                            <button>Delete</button>
+                        </a>
+                    </td>
+                    
+                </tr>
+            {% endfor %}
+
+
+        </tbody>
+    </table>
+
+    <a href="/order/orderadd/" class="addbtn">
+        <button>Add Orders</button>
+    </a>
+      -->
+
+
+<div class="main-content">
+    <div class="order-page">
+
+        <h2>Ordered Datas</h2>
+
+        <div class="table-responsive">
+            <table class="order-table">
+                <thead>
+                    <tr>
+                        <th>Customers</th>
+                        <th>Products</th>
+                        <th>Order Number</th>
+                        <th>Date</th>
+                        <th>Quantity</th>
+                        <th>Amount</th>
+                        <th>GST Amount</th>
+                        <th>Bill Amount</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for Orders in all_order %}
+                    <tr>
+                        <td>{{ Orders.customer_reference }}</td>
+                        <td>{{ Orders.product_reference }}</td>
+                        <td>{{ Orders.order_num }}</td>
+                        <td>{{ Orders.order_date }}</td>
+                        <td>{{ Orders.product_quantity }}</td>
+                        <td>{{ Orders.product_amount }}</td>
+                        <td>{{ Orders.product_gst }}</td>
+                        <td>{{ Orders.bill_amount }}</td>
+
+                        <td>
+                            <a href="{% url 'update_order_items' Orders.id %}" class="update">
+                                <button type="button">Update</button>
+                            </a>
+                        </td>
+
+                        <td>
+                            <a href="{% url 'delete_order_items' Orders.id %}" class="delete">
+                                <button type="button">Delete</button>
+                            </a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="10">No orders found.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        {% if request.user.role == 0 or request.user.role == 1 %}
+        <div class="add-order-container">
+            <a href="/order/orderadd/" class="addbtn">
+                <button type="button">+ Add Orders</button>
+            </a>
+        </div>
+        {% endif %}
+
+    </div>
+</div>
+
+{% endblock %}

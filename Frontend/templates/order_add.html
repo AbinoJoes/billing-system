@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="main-content">
+    <div class="order-form-page">
+
+        <h2>Ordered Datas</h2>
+
+        <div class="form-back-container">
+            <a href="/order/orderall/" class="backbtn">
+                <button type="button">← Back</button>
+            </a>
+        </div>
+
+        <form action="" method="POST" class="order-form">
+
+            {% csrf_token %}
+
+            <div class="form-fields">
+                {{ order_detail }}
+            </div>
+
+            <div class="form-submit-container">
+                <input type="submit" value="Apply Now">
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,178 @@
+
+/* Product Form Page */
+.product-form-page {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Page Heading */
+.product-form-page h2 {
+    color: whitesmoke;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #1ab8ff;
+}
+
+/* Back Button */
+.form-back-container {
+    margin-bottom: 20px;
+}
+
+.product-form-page .backbtn {
+    text-decoration: none;
+}
+
+.product-form-page .backbtn button {
+    background: #081525;
+    color: white;
+    border: 1px solid #1ab8ff;
+    padding: 10px 22px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.product-form-page .backbtn button:hover {
+    background: #1ab8ff;
+    color: #010814;
+}
+
+/* Form Card */
+.product-form {
+    background: #ffffff;
+    padding: 30px;
+    border: 1px solid #dce5ee;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(1, 8, 20, 0.10);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    box-sizing: border-box;
+}
+
+/* Form Fields */
+.product-form .form-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 25px;
+}
+
+/* Django-generated field spacing */
+.product-form .form-fields p {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0;
+    min-width: 0;
+}
+
+.product-form .form-fields label {
+    color: #081525;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Inputs, Selects and Textareas */
+.product-form .form-fields input,
+.product-form .form-fields select,
+.product-form .form-fields textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    background: #f8fafc;
+    color: #081525;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+    transition: 0.3s ease;
+}
+
+.product-form .form-fields input:focus,
+.product-form .form-fields select:focus,
+.product-form .form-fields textarea:focus {
+    border-color: #1ab8ff;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(26, 184, 255, 0.15);
+}
+
+/* Help Text and Errors */
+.product-form .form-fields .helptext {
+    color: #64748b;
+    font-size: 12px;
+}
+
+.product-form .form-fields .errorlist {
+    color: #dc2626;
+    font-size: 13px;
+    padding-left: 18px;
+    margin: 0;
+}
+
+/* Submit Button */
+.form-submit-container {
+    display: flex;
+    justify-content: end;
+    margin-top: 5px;
+}
+
+.product-form .form-submit-container input[type="submit"] {
+    width: auto;
+    min-width: 180px;
+    padding: 13px 28px;
+    border: none;
+    border-radius: 7px;
+    background: linear-gradient(135deg, #0879d1, #1ab8ff);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.product-form .form-submit-container input[type="submit"]:hover {
+    background: #010814;
+    box-shadow: 0 4px 12px rgba(26, 184, 255, 0.25);
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .product-form-page {
+        padding: 15px;
+    }
+
+    .product-form {
+        padding: 22px;
+    }
+
+    .product-form .form-fields {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .product-form-page {
+        padding: 10px;
+    }
+
+    .product-form-page h2 {
+        font-size: 23px;
+    }
+
+    .product-form {
+        padding: 16px;
+        gap: 20px;
+    }
+
+    .product-form .form-submit-container input[type="submit"] {
+        width: 100%;
+    }
+}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static%}  
+
+{% block content %}
+ 
+
+<div class="main-content">
+    <div class="customer-page">
+
+        <h2>All Customers</h2>
+
+        <div class="table-responsive">
+            <table class="customer-table">
+                <thead>
+                    <tr>
+                        <th>Customer_ID</th>
+                        <th>Customer_since</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for Customers in all_customer %}
+                    <tr>
+                        <td>{{ Customers.customer_id }}</td>
+                        <td>{{ Customers.customer_since }}</td>
+
+                        <td>
+                            <a href="{% url 'update_items' Customers.id %}" class="update">
+                                <button type="button">Update</button>
+                            </a>
+                        </td>
+
+                        <td>
+                            <a href="{% url 'delete_items' Customers.id %}" class="delete">
+                                <button type="button">Delete</button>
+                            </a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="4">No customers found.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="add-customer-container">
+            <a href="/order/customer/" class="addbtn">
+                <button type="button">+ Add Customer</button>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+
+  
+
+
+   
+
+
+{% endblock %}

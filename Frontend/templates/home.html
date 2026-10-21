@@ -1,0 +1,218 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+   
+
+   
+
+
+
+<body>
+
+<div class="main-content">
+    <div class="home-page" >
+
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <div class="welcome-content">
+                <span class="welcome-label">BILLING MANAGEMENT SYSTEM</span>
+
+                <h1>Welcome to Your Dashboard</h1>
+
+                <p>
+                    Manage your customers, products, orders, and billing
+                    activities from one simple and organized workspace.
+                </p>
+                {% if request.user.role == 0 %}
+                <div class="welcome-actions">
+                    <a href="/order/customer/" class="primary-btn">
+                        + Add Customer
+                    </a>
+
+                    <a href="/order/orderadd/" class="secondary-btn">
+                        Create Order
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="welcome-icon">
+                <div class="icon-circle">₹</div>
+                <span>Smart Billing</span>
+                <small>Simple · Fast · Organized</small>
+            </div>
+        </section>
+
+
+        <!-- Dashboard Heading -->
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Dashboard Overview</h2>
+                    <p>Keep track of your billing activities.</p>
+                </div>
+
+                <span class="status-label">
+                    <span class="status-dot"></span>
+                    System Dashboard
+                </span>
+            </div>
+
+
+            <!-- Summary Cards -->
+            <div class="stats-grid">
+                {% if request.user.role == 0 or request.user.role == 1 %}
+                <div class="stat-card customers-card">
+                    <div class="stat-top">
+                        <div class="stat-icon">👥</div>
+                        <span class="stat-tag">CUSTOMERS</span>
+                    </div>
+
+                    <h3>Customers</h3>
+                    <p>Manage customer information and records.</p>
+
+                    <a href="/order/customerall/" class="stat-link">
+                        View Customers <span>→</span>
+                    </a>
+                </div>
+                {% endif %}
+
+
+                <div class="stat-card products-card">
+                    <div class="stat-top">
+                        <div class="stat-icon">📦</div>
+                        <span class="stat-tag">PRODUCTS</span>
+                    </div>
+
+                    <h3>Products</h3>
+                    <p>Maintain product details, prices, and GST.</p>
+
+                    <a href="/Inventory/productall/" class="stat-link">
+                        View Products <span>→</span>
+                    </a>
+                </div>
+
+
+                <div class="stat-card orders-card">
+                    <div class="stat-top">
+                        <div class="stat-icon">🧾</div>
+                        <span class="stat-tag">ORDERS</span>
+                    </div>
+
+                    <h3>Orders</h3>
+                    <p>Track orders, quantities, GST, and bill amounts.</p>
+
+                    <a href="/order/orderall/" class="stat-link">
+                        View Orders <span>→</span>
+                    </a>
+                </div>
+
+                {% if request.user.role == 0 or request.user.role == 1 %}
+                <div class="stat-card billing-card">
+                    <div class="stat-top">
+                        <div class="stat-icon">💳</div>
+                        <span class="stat-tag">BILLING</span>
+                    </div>
+
+                    <h3>Billing Records</h3>
+                    <p>Access your order records and billing details.</p>
+
+                    <a href="/order/billingpage/" class="stat-link">
+                        Manage Billing <span>→</span>
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </section>
+
+
+        {% if request.user.role == 0 or request.user.role == 1%}
+        
+        <!-- Quick Actions -->
+        <section class="quick-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Quick Actions</h2>
+                    <p>Access frequently used features.</p>
+                </div>
+            </div>
+
+            <div class="quick-grid">
+
+                <a href="/order/customer/" class="quick-card">
+                    <span class="quick-icon">＋</span>
+                    <div>
+                        <h3>Add Customer</h3>
+                        <p>Create a new customer record.</p>
+                    </div>
+                    <span class="quick-arrow">→</span>
+                </a>
+
+                <a href="/Inventory/product/" class="quick-card">
+                    <span class="quick-icon">＋</span>
+                    <div>
+                        <h3>Add Product</h3>
+                        <p>Register a product with price and GST.</p>
+                    </div>
+                    <span class="quick-arrow">→</span>
+                </a>
+
+                <a href="/order/orderadd/" class="quick-card">
+                    <span class="quick-icon">＋</span>
+                    <div>
+                        <h3>Create Order</h3>
+                        <p>Add an order and calculate bill details.</p>
+                    </div>
+                    <span class="quick-arrow">→</span>
+                </a>
+
+                <a href="/Inventory/contact/" class="quick-card">
+                    <span class="quick-icon">✉</span>
+                    <div>
+                        <h3>Contact</h3>
+                        <p>View the contact page.</p>
+                    </div>
+                    <span class="quick-arrow">→</span>
+                </a>
+
+            </div>
+        </section>
+        {% endif %}
+
+        <!-- Information Banner -->
+        <section class="info-banner">
+            <div class="info-symbol">✓</div>
+
+            <div>
+                <h3>Everything in One Place</h3>
+                <p>
+                    Keep customer details, product information, and order
+                    records organized to make your daily billing workflow easier.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="home-footer">
+            <p>© 2026 Billing Management System. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+</div>
+</body>
+
+
+{% endblock%}
+
+
+
+
+
+    

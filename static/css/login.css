@@ -1,0 +1,100 @@
+
+/* Page Background */
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #010814, #0b1f3a, #12345a);
+    color: #ffffff;
+}
+
+/* Center Login Container */
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Login Card */
+.container .col-lg-6 {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 35px 40px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+}
+
+/* Heading */
+.container h1 {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-top: 0 !important;
+    margin-bottom: 30px !important;
+}
+
+.container h1::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    margin: 12px auto 0;
+    border-radius: 5px;
+    background: #1ab8ff;
+}
+
+/* Labels */
+.form-label {
+    color: #dce9f7;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+/* Input Fields */
+.form-control {
+    height: 48px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 12px 15px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+/* Input Focus */
+.form-control:focus {
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    border-color: #1ab8ff;
+    box-shadow: 0 0 0 3px rgba(26, 184, 255, 0.15);
+    outline: none;
+}
+
+/* Input Placeholder */
+.form-control::placeholder {
+    color: #9aafc6;
+}
+
+/* Error Message */
+.error {
+    color: #ff7777;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+/* Submit Button */
+.btn-solid.theme-primary {
+    width: 100%;
+    padding: 13px 20px;
+    margin-top: 10px;
+    background: linear-gradient(135deg, #168cff, #1ab8ff);
+    color: #ffffff;
+}

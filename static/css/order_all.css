@@ -1,0 +1,177 @@
+/* order page */
+.order-page {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+.order-page h2 {
+    color: whitesmoke;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 22px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #1ab8ff;
+}
+
+/* Responsive table wrapper */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    background: #fff;
+    border: 1px solid #dbe5ef;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* order table */
+.order-table {
+    width: 100%;
+    min-width: 750px;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+.order-table thead {
+    background: linear-gradient(135deg, #010814, #12345a);
+}
+
+.order-table th {
+    color: #fff;
+    padding: 16px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.order-table td {
+    color: #334155;
+    padding: 14px 16px;
+    font-size: 14px;
+    border-bottom: 1px solid #e5edf5;
+    white-space: nowrap;
+}
+
+.order-table tbody tr:nth-child(even) {
+    background: #f5f9fc;
+}
+
+.ordert-table tbody tr:hover {
+    background: #e8f6ff;
+}
+
+/* Update button */
+.order-table .update button {
+    background: #168cff;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.order-table .update button:hover {
+    background: #0871d1;
+}
+
+/* Delete button */
+.order-table .delete button {
+    background: #ef4444;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.order-table .delete button:hover {
+    background: #dc2626;
+}
+
+/* Add product button */
+.add-order-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 22px;
+}
+
+.addbtn button {
+    background: linear-gradient(135deg, #0878d1, #1ab8ff);
+    color: #fff;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.addbtn button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(26, 184, 255, 0.25);
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .order-page {
+        padding: 20px 15px;
+    }
+
+    .order-page h2 {
+        font-size: 24px;
+    }
+
+    .order-table th,
+    .order-table td {
+        padding: 12px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .product-page {
+        padding: 15px 10px;
+    }
+
+    .product-page h2 {
+        font-size: 21px;
+        margin-bottom: 16px;
+    }
+
+    .product-table {
+        min-width: 700px;
+    }
+
+    .product-table th,
+    .product-table td {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .product-table .update button,
+    .product-table .delete button {
+        padding: 7px 10px;
+        font-size: 12px;
+    }
+
+    .add-product-container {
+        justify-content: stretch;
+    }
+
+    .add-product-container .addbtn {
+        width: 100%;
+    }
+
+    .add-product-container .addbtn button {
+        width: 100%;
+    }
+}

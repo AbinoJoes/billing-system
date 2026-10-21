@@ -1,0 +1,204 @@
+
+/* Order form page */
+.customer-form-page {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+.customer-form-page h2 {
+    color: whitesmoke;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 22px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #1ab8ff;
+}
+
+/* Back button */
+.form-back-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.backbtn button {
+    background: #10243a;
+    color: #fff;
+    border: 1px solid #254563;
+    padding: 10px 20px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.backbtn button:hover {
+    background: #1ab8ff;
+    color: #010814;
+}
+
+/* Form card */
+.customer-form {
+    width: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background: #fff;
+    border: 1px solid #dbe5ef;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Django form fields */
+.customer-form .form-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+/* Labels */
+.customer-form .form-fields label {
+    display: block;
+    margin-bottom: 8px;
+    color: #10243a;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Inputs, selects and textareas */
+.customer-form .form-fields input:not([type="checkbox"]):not([type="radio"]),
+.customer-form .form-fields select,
+.customer-form .form-fields textarea {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    background: #f8fafc;
+    color: #172033;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.customer-form .form-fields input:focus,
+.customer-form .form-fields select:focus,
+.customer-form .form-fields textarea:focus {
+    border-color: #1ab8ff;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(26, 184, 255, 0.15);
+}
+
+.customer-form .form-fields textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Help and error messages */
+.customer-form .form-fields .helptext {
+    display: block;
+    margin-top: 5px;
+    color: #64748b;
+    font-size: 12px;
+}
+
+.customer-form .form-fields ul.errorlist {
+    color: #dc2626;
+    font-size: 13px;
+    padding-left: 18px;
+}
+
+/* Submit button */
+.customer-form .form-submit-container {
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid #e5edf5;
+    padding-top: 20px;
+}
+
+.customer-form .form-submit-container input[type="submit"] {
+    background: linear-gradient(135deg, #0878d1, #1ab8ff);
+    color: #fff;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.customer-form .form-submit-container input[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(26, 184, 255, 0.25);
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .customer-form-page {
+        padding: 20px 15px;
+    }
+
+    .customer-form-page h2 {
+        font-size: 24px;
+    }
+
+    .customer-form {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .customer-form .form-fields {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .customer-form-page {
+        padding: 15px 10px;
+    }
+
+    .customer-form-page h2 {
+        font-size: 21px;
+        margin-bottom: 18px;
+    }
+
+    .customer-form {
+        padding: 15px;
+        gap: 18px;
+    }
+
+    .customer-form .form-fields {
+        gap: 15px;
+    }
+
+    .customer-form .form-fields input:not([type="checkbox"]):not([type="radio"]),
+    .customer-form .form-fields select,
+    .customer-form .form-fields textarea {
+        padding: 11px;
+        font-size: 14px;
+    }
+
+    .customer-form .form-submit-container {
+        display: block;
+    }
+
+    .customer-form .form-submit-container input[type="submit"] {
+        width: 100%;
+    }
+
+    .backbtn button {
+        padding: 10px 16px;
+    }
+}
+

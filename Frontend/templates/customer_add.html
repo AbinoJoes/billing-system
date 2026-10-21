@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+   
+
+<div class="main-content">
+    <div class="customer-form-page">
+
+        <h2>Customers Table</h2>
+
+        <div class="form-back-container">
+            <a href="/order/customerall/" class="backbtn">
+                <button type="button">← Back</button>
+            </a>
+        </div>
+
+        <form action="" method="POST" class="customer-form">
+
+            {% csrf_token %}
+
+            <div class="form-fields">
+                {{ customer_detail }}
+            </div>
+
+            <div class="form-submit-container">
+                <input type="submit" value="Add Customer">
+            </div>
+
+        </form>
+
+    </div>
+</div>  
+{% endblock %}
